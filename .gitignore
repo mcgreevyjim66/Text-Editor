@@ -1,7 +1,6 @@
-Develop/node_modules/
-Develop/dist/
-Develop/client/node_modules
-Develop/server/node_modules
-Develop/npm-debug.log
-Develop/.DS_Store
-Develop/*.env
+node_modules/
+dist/
+/node_modules
+npm-debug.log
+.DS_Store
+*.env
