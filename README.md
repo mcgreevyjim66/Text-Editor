@@ -56,7 +56,7 @@ There is source code located in the Text-Editor folder.
 
 ## Mock-up
 
-![The Text-Editor screen shot.](./assets/Text-Editor.PNG)
+![The Text-Editor screen shot.](./Assets/Text-Editor.PNG)
 
 ## Credits
 
