@@ -47,7 +47,7 @@ THEN I should have proper build scripts for a webpack application
 
 ## Usage
 
-To run a demo of this application, please launch the demo located at https://watch.screencastify.com/v/xe5d19bxNGVl3Jose33b
+To run a demo of this application, please launch the demo located at https://radiant-escarpment-20980-5908c73ab9af.herokuapp.com/
 
 ## Source
 
