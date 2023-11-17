@@ -4,6 +4,8 @@ import Editor from './editor'; // Importing a custom Editor class.
 import './database'; // Importing the database module.
 import '../css/style.css'; // Importing CSS styles.
 
+console.log("*** index.js")
+
 // Selecting the main DOM element where the app will render its content.
 const main = document.querySelector('#main');
 main.innerHTML = ''; // Clearing any existing content in the main element.

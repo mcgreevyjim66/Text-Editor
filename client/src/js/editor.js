@@ -2,6 +2,8 @@
 import { getDb, putDb } from './database';
 import { header } from './header';
 
+console.log("**** editor.js")
+
 // Exporting a default class.
 export default class {
   constructor() {
@@ -28,7 +30,7 @@ export default class {
     // Retrieving data from IndexedDB and setting it as the editor's content.
     // Falls back to localStorage data or a predefined header if IndexedDB is empty.
     getDb().then((data) => {
-      console.info('Loaded data from IndexedDB, injecting into editor');
+      console.info('** editor.js Loaded data from IndexedDB, injecting into editor:' + (data));
       this.editor.setValue(data || localData || header);
     });
 

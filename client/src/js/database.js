@@ -3,8 +3,9 @@ import { openDB } from 'idb';
 
 // Defining an asynchronous function 'initdb' to initialize the database.
 const initdb = async () =>
+ console.log("**** database.js initdb")
   // Opening or creating a database named 'jate' with version number 1.
-  openDB('jate', 1, {
+   openDB('jate', 1, {
     // The 'upgrade' callback is executed when the database is first created or when a version change is detected.
     upgrade(db) {
       // Checking if an object store named 'jate' already exists in the database.
@@ -23,6 +24,7 @@ const initdb = async () =>
 
 // Defining an asynchronous function 'putDb' that takes 'id' and 'content' as parameters, to add data to the database.
 export const putDb = async (id, content) => {
+  console.log("**** database.js putDb")
   // Opening the 'jate' database with version number 1.
   const jateDB = await openDB("jate", 1);
   // Starting a readwrite transaction on the 'jate' object store.
@@ -31,16 +33,21 @@ export const putDb = async (id, content) => {
   const store = tx.objectStore("jate");
   // Putting the data (with 'id' and 'content') into the object store.
   const request = store.put({id: id, jate: content });
+  // Logging the content that was saved.
+  console.log("**** database.js putDB content:" + content)
   // Waiting for the request to complete and storing the result.
   const result = await request;
   // Logging to the console that data has been saved to the database.
   console.log("Data saved to the database", result);
-  // Logging the content that was saved.
-  console.log("**** database.js putDB content:" + content)
+  return result;
+
+
+
 };
 
 // Defining an asynchronous function 'getDb' to retrieve all content from the database.
 export const getDb = async () => {
+  console.log("**** database.js getDb")
   // Opening the 'jate' database with version number 1.
   const jateDB = await openDB("jate", 1);
   // Starting a readonly transaction on the 'jate' object store.
@@ -52,7 +59,9 @@ export const getDb = async () => {
   // Waiting for the request to complete and storing the result.
   const result = await request;
   // Logging the result to the console.
-  console.log(result);
+  //console.log("database.js getAll result:" + JSON.stringify(result));
+  console.log("database.js getAll result:" + result);
+  return result;
 };
 
 // Executing the 'initdb' function to initialize the database.
