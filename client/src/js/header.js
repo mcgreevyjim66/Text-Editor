@@ -1,3 +1,4 @@
+// Declaring a template literal to define a multi-line string.
 const header = `
 /*
        _____  ____________
@@ -9,4 +10,5 @@ just another text editor
 */                          
 `;
 
+// Exporting the 'header' constant so it can be imported in other files.
 export { header };
