@@ -30,8 +30,20 @@ export default class {
     // Retrieving data from IndexedDB and setting it as the editor's content.
     // Falls back to localStorage data or a predefined header if IndexedDB is empty.
     getDb().then((data) => {
-      console.info('** editor.js Loaded data from IndexedDB, injecting into editor:' + (data));
-      this.editor.setValue(data || localData || header);
+      let [dataObj] = data;
+      console.info('** editor.js Loaded data from IndexedDB 1, injecting into editor:' + dataObj);
+      //console.info('** editor.js Loaded data from IndexedDB 2, injecting into editor:' + dataObj.jate);
+     
+      if (dataObj){
+        console.log("** editor.js dataobj = true")
+        this.editor.setValue(dataObj.jate);
+
+      } else {
+        console.log("** editor.js dataobj = false")
+        this.editor.setValue(localData || header);
+
+      }
+   
     });
 
     // Saving current content to localStorage whenever there's a change in the editor.
